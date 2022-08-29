@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 
 class ImagesPicker {
-  static const MethodChannel _channel =
-      const MethodChannel('chavesgu/images_picker');
+  static const MethodChannel _channel = const MethodChannel('chavesgu/images_picker');
 
   static Future<List<Media>?> pick({
     int count = 1,
