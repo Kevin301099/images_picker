@@ -155,8 +155,10 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
         Utils.setPhotoSelectOpt(model, count, quality);
         if (cropOption!=null) Utils.setCropOpt(model, cropOption);
         model.isGif(supportGif);
+        model.isWithVideoImage(false);
         model.videoMaxSecond(maxTime);
-        model.isWithSelectVideoImage(false);
+        model.maxVideoSelectNum(1);
+
         resolveMedias(model);
         break;
       }
