@@ -502,6 +502,10 @@ public class SwiftImagesPickerPlugin: NSObject, FlutterPlugin {
   
   private func setThemeColor(configuration: ZLPhotoConfiguration, colors: NSDictionary?) {
     let theme = ZLPhotoThemeColorDeploy();
-//    configuration.themeColorDeploy = theme;
+    theme.cameraRecodeProgressColor = UIColor(red: 211 / 255.0, green: 56 / 255.0, blue: 46 / 255.0, alpha: 1);
+    theme.indexLabelBgColor = UIColor(red: 211 / 255.0, green: 56 / 255.0, blue: 46 / 255.0, alpha: 1);
+    theme.previewBtnHighlightTitleColor = UIColor(red: 211 / 255.0, green: 56 / 255.0, blue: 46 / 255.0, alpha: 1);
+    theme.bottomToolViewBtnNormalBgColor = UIColor(red: 211 / 255.0, green: 56 / 255.0, blue: 46 / 255.0, alpha: 1);
+    configuration.themeColorDeploy = theme;
   }
 }
