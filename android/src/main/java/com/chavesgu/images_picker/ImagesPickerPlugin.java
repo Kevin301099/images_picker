@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
@@ -51,12 +52,15 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 import com.luck.picture.lib.PictureSelectionModel;
 import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.app.PictureAppMaster;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.language.LanguageConfig;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
+import com.luck.picture.lib.style.PictureSelectorUIStyle;
 import com.luck.picture.lib.tools.PictureFileUtils;
+import com.luck.picture.lib.tools.ScreenUtils;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
@@ -158,6 +162,12 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
         model.isWithVideoImage(false);
         model.videoMaxSecond(maxTime);
         model.maxVideoSelectNum(1);
+        PictureSelectorUIStyle uiStyle = PictureSelectorUIStyle.ofNewStyle();
+        uiStyle.picture_top_titleRightTextColor = new int[]{Color.parseColor("#EEEEEE"), Color.parseColor("#FFFFFF")};
+        uiStyle.picture_top_titleRightTextDefaultBackground = R.drawable.images_picker_done_default_bg;
+        uiStyle.picture_top_titleRightTextNormalBackground = R.drawable.images_picker_done_bg;
+        uiStyle.picture_check_style = R.drawable.picture_wechat_num_selector;
+        model.setPictureUIStyle(uiStyle);
 
         resolveMedias(model);
         break;
