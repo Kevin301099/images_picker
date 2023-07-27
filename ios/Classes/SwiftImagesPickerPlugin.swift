@@ -80,8 +80,10 @@ public class SwiftImagesPickerPlugin: NSObject, FlutterPlugin {
                 group.leave();
               });
             } else {
-              resArr.append(dir);
-              group.leave();
+               self.resolveImage(asset: asset, resultHandler: { dir in
+                resArr.append(dir);
+                group.leave();
+              });
             }
           } else if asset.mediaType==PHAssetMediaType.video {
             manager.requestAVAsset(forVideo: asset, options: options, resultHandler: { avasset,audioMix,info  in
