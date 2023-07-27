@@ -43,7 +43,7 @@ public class SwiftImagesPickerPlugin: NSObject, FlutterPlugin {
       config.allowMixSelect = false;
       config.showSelectedPhotoPreview = false;
       config.showPreviewButtonInAlbum = false;
-      config.allowSelectOriginal = false;
+      config.allowSelectOriginal = true;
 
       if cropOption != nil {
         config.allowEditImage = true;
