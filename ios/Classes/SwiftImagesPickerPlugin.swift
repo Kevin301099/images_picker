@@ -80,7 +80,7 @@ public class SwiftImagesPickerPlugin: NSObject, FlutterPlugin {
                 group.leave();
               });
             } else {
-              resArr.append(self.resolveImage(image: image, maxSize: maxSize));
+              resArr.append(dir);
               group.leave();
             }
           } else if asset.mediaType==PHAssetMediaType.video {
